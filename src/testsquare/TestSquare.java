@@ -45,6 +45,7 @@ public class TestSquare extends Application {
         //This creates the image for the reddit monster, it is assigned to a type image
         Image redditMonsterImage = reddit.paintMonster(imageReddit = new Image("images/reddit.png"), 1300, 600, 112, 211);
         //This lets the monster move on the map, it is assigned to a type Rectangle
+        
         Rectangle redditMonster =  reddit.moveMonster(redditMonsterImage, 1400, 600, 100, 100);
         
         //This method prints the map (for now, version one)

@@ -12,7 +12,7 @@ package testsquare;
 //RedditMonster class
 public class RedditMonster extends Monster{
     
-    public RedditMonster(int health, int speed, boolean isAlive, boolean isGameRunning) {
+    public RedditMonster(int health,int speed, boolean isAlive, boolean isGameRunning) {
         super(health, speed, isAlive, isGameRunning);
     }   
 

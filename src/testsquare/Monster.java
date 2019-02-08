@@ -4,8 +4,10 @@ package testsquare;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.beans.binding.BooleanBinding;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -47,6 +49,7 @@ public class Monster {
         this.isAlive = isAlive;
     } 
     
+    
     //moveMonster method, an algorythm that moves the monster from point A to B
     public Rectangle moveMonster(Image image,int rectX, int rectY, int rectWidth, int rectHeight){    
         Rectangle rectangle= new Rectangle(rectX,rectY,rectWidth,rectHeight);
@@ -58,6 +61,11 @@ public class Monster {
         timeline.getKeyFrames().add(kf);
         timeline.play();  
         rectangle.setFill(new ImagePattern(image));
+        System.out.println(kf.getTime());
+        BooleanBinding intersecting = rectangle.xProperty().lessThanOrEqualTo(191); 
+        intersecting.addListener((obs,wasIntersecting,isNowIntersecting)->{
+            rectangle.setFill(Color.RED);
+        }); 
         return rectangle;
     }
     //paints the monster
