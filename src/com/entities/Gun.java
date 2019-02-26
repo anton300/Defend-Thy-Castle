@@ -47,11 +47,4 @@ public class Gun implements RunComponentI {
             this.gunElevation = MIN_GUN_ELEVATION;
         }
     }
-
-    public boolean runObject(boolean b) {
-        if (b) {
-            return true;
-        }
-        return false;
-    }
 }

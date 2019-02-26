@@ -25,11 +25,4 @@ public class Castle implements RunComponentI {
     public Shooter getShooter() {
         return shooter;
     }
-
-    public boolean runObject(boolean b) {
-        if (b) {
-            return true;
-        }
-        return false;
-    }
 }
