@@ -20,7 +20,7 @@ public class Shooter implements RunComponentI {
     public Shooter() throws IOException {
         gun = new Gun(35, 0, GUN_ANCHOR_POINT);
 
-        int[] dropPointCoor = {RunGame.PANE_HEIGHT, RunGame.PANE_WIDTH / 2};
+        int[] dropPointCoor = {RunGame.CANVAS_HEIGHT, RunGame.CANVAS_WIDTH / 2};
         bomb = new Bomb(500, dropPointCoor, new Image(new FileInputStream("")));
     }
 
