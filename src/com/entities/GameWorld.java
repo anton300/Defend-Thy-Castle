@@ -1,6 +1,5 @@
 package com.entities;
 
-
 import java.io.IOException;
 
 /**
@@ -14,7 +13,7 @@ public class GameWorld {
     // Monster variable
 
     public GameWorld() throws IOException {
-        castle = new Castle(new Shooter());
+        castle = new Castle(new Shooter(), 100);
         // Monster instance
     }
 

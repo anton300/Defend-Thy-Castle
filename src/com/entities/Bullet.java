@@ -7,4 +7,10 @@ package com.entities;
  */
 public class Bullet implements RunComponentI {
 
+    public boolean runObject(boolean b) {
+        if (b) {
+            return true;
+        }
+        return false;
+    }
 }

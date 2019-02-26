@@ -38,6 +38,7 @@ public class RunGame extends Application {
         VBox pane = new VBox(10);
         // Sets the scene of the Stage
         Scene scene = new Scene(pane, PANE_WIDTH, PANE_HEIGHT);
+
         GameWorld world = new GameWorld();
         gameButton(world);
 

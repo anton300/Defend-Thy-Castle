@@ -58,4 +58,11 @@ public class Bomb implements RunComponentI {
     public void dropBomb() {
 
     }
+
+    public boolean runObject(boolean b) {
+        if (b) {
+            return true;
+        }
+        return false;
+    }
 }

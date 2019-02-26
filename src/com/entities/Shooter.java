@@ -34,4 +34,11 @@ public class Shooter implements RunComponentI {
     public Bomb getBomb() {
         return bomb;
     }
+
+    public boolean runObject(boolean b) {
+        if (b) {
+            return true;
+        }
+        return false;
+    }
 }

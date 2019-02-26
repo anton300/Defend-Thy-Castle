@@ -56,4 +56,11 @@ public class Gun implements RunComponentI {
     public void addDamageBoost(int damageBoost) {
         this.damage += damageBoost;
     }
+
+    public boolean runObject(boolean b) {
+        if (b) {
+            return true;
+        }
+        return false;
+    }
 }
