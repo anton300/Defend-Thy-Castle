@@ -9,12 +9,21 @@ import java.io.IOException;
  * @author Anton Zenin
  */
 public class GameWorld {
-    private static Castle castle;
+    private volatile boolean isRunning = false;
+    private Castle castle;
     // Monster variable
 
     public GameWorld() throws IOException {
         castle = new Castle(new Shooter(), 100);
         // Monster instance
+    }
+
+    public boolean isRunning() {
+        return isRunning;
+    }
+
+    public void setRunning(boolean running) {
+        isRunning = running;
     }
 
     public Castle getCastle() {
@@ -25,13 +34,17 @@ public class GameWorld {
      * Runs the game with all the components collaborating.
      * Acts as an access method to the rest of the game.
      *
-     * @param condition true or false.
      * @return True if the game is running. Otherwise false.
      */
-    public boolean playGame(boolean condition) {
-        while (condition) {
-
+    public void playGame() {
+        while (true) {
+            runGameLogic();
         }
-        return false;
+    }
+
+    private void runGameLogic() {
+        while (isRunning) {
+            // Game logic
+        }
     }
 }

@@ -9,11 +9,11 @@ import javafx.scene.image.Image;
  * @author Anton Zenin
  */
 public class Bomb implements RunComponentI {
-    private static int damage;
-    private static int[] blastRadius;
-    private static int[] dropPoint;
-    private static int[] areaOfEffect;
-    private static Image bombImage;
+    private int damage;
+    private int[] blastRadius;
+    private int[] dropPoint;
+    private int[] areaOfEffect;
+    private Image bombImage;
 
     public Bomb(int damage, int[] dropPoint, Image bombImage) {
         this.damage = damage;
@@ -35,7 +35,7 @@ public class Bomb implements RunComponentI {
     }
 
     public void setDamage(int damage) {
-        Bomb.damage = damage;
+        this.damage = damage;
     }
 
     public int[] computeBlastRadius() {
@@ -49,20 +49,13 @@ public class Bomb implements RunComponentI {
     public void setDropPoint(int newX, int newY) {
         if (newX < RunGame.PANE_WIDTH && newX > 0) {
             if (newY < RunGame.PANE_HEIGHT && newY > 0) {
-                Bomb.dropPoint[0] = newX;
-                Bomb.dropPoint[1] = newY;
+                this.dropPoint[0] = newX;
+                this.dropPoint[1] = newY;
             }
         }
     }
 
     public void dropBomb() {
 
-    }
-
-    public boolean runObject(boolean b) {
-        if (b) {
-            return true;
-        }
-        return false;
     }
 }

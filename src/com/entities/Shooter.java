@@ -12,13 +12,13 @@ import java.io.IOException;
  * @author Anton Zenin
  */
 public class Shooter implements RunComponentI {
-    private static Gun gun;
-    private static Bomb bomb;
+    private Gun gun;
+    private Bomb bomb;
 
     private static final int[] GUN_ANCHOR_POINT = {250, 250};
 
     public Shooter() throws IOException {
-        gun = new Gun(35, GUN_ANCHOR_POINT);
+        gun = new Gun(35, 0, GUN_ANCHOR_POINT);
 
         int[] dropPointCoor = {RunGame.PANE_HEIGHT, RunGame.PANE_WIDTH / 2};
         bomb = new Bomb(500, dropPointCoor, new Image(new FileInputStream("")));
@@ -30,12 +30,5 @@ public class Shooter implements RunComponentI {
 
     public Bomb getBomb() {
         return bomb;
-    }
-
-    public boolean runObject(boolean b) {
-        if (b) {
-            return true;
-        }
-        return false;
     }
 }

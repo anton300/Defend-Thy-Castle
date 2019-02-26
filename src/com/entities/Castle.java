@@ -6,8 +6,8 @@ package com.entities;
  * @author Anton Zenin
  */
 public class Castle implements RunComponentI {
-    private static Shooter shooter;
-    private static int health;
+    private Shooter shooter;
+    private int health;
 
     public Castle(Shooter shooter, int health) {
         this.shooter = shooter;

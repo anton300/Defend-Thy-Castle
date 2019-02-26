@@ -8,8 +8,8 @@ package com.entities;
 public class Gun implements RunComponentI {
     private int damage;
     private int gunElevation;
-    private static Bullet bullet;
-    private static int[] anchorPoint = new int[2];
+    private Bullet bullet;
+    private int[] anchorPoint = new int[2];
 
     public static final int MAX_GUN_ELEVATION = 10;
     public static final int MIN_GUN_ELEVATION = 170;

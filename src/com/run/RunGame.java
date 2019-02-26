@@ -59,11 +59,11 @@ public class RunGame extends Application {
 
                 if (buttonClicked > 0) {
                     btn.setLabel("Pause");
-                    world.playGame(true);
+                    world.playGame();
 
                 } else {
                     btn.setLabel("Resume");
-                    world.playGame(false);
+                    world.playGame();
                 }
             }
         });

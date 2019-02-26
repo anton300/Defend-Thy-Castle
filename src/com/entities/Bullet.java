@@ -6,7 +6,7 @@ package com.entities;
  * @author Anton Zenin
  */
 public class Bullet implements RunComponentI {
-    private static final int velocity = 5;
+    private final int velocity = 5;
     private int damage;
     private int damageBoost;
     private int[] travelPoint = new int[2];
