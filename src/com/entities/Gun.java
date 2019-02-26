@@ -7,8 +7,8 @@ package com.entities;
  */
 public class Gun implements RunComponentI {
     private int damage;
-    private int damageBoost;
     private int gunElevation;
+    private static Bullet bullet;
     private static int[] anchorPoint = new int[2];
 
     public static final int MAX_GUN_ELEVATION = 10;
@@ -16,21 +16,16 @@ public class Gun implements RunComponentI {
 
     public Gun(int damage, int damageBoost, int[] anchorPoint) {
         this.damage = damage;
-        this.damageBoost = damageBoost;
-        this.anchorPoint = anchorPoint;
         this.gunElevation = 90;
+
+        this.anchorPoint[0] = anchorPoint[0];
+        this.anchorPoint[1] = anchorPoint[1];
+
+        this.bullet = new Bullet(this.damage, damageBoost, anchorPoint);
     }
 
     public int getDamage() {
         return damage;
-    }
-
-    public int getDamageBoost() {
-        return damageBoost;
-    }
-
-    public void setDamageBoost(int damageBoost) {
-        this.damageBoost = damageBoost;
     }
 
     public int getGunElevation() {
@@ -51,10 +46,6 @@ public class Gun implements RunComponentI {
         if (gunElevation > MIN_GUN_ELEVATION) {
             this.gunElevation = MIN_GUN_ELEVATION;
         }
-    }
-
-    public void addDamageBoost(int damageBoost) {
-        this.damage += damageBoost;
     }
 
     public boolean runObject(boolean b) {
