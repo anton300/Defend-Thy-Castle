@@ -29,10 +29,8 @@ public class GameWorld {
     }
 
     /**
-     * Runs the game with all the components collaborating.
-     * Acts as an access method to the rest of the game.
-     *
-     * @return True if the game is running. Otherwise false.
+     * The infinite outer loop that runs the game until the player clicks
+     * the exit button of the window.
      */
     public void playGame() {
         while (true) {
@@ -40,6 +38,9 @@ public class GameWorld {
         }
     }
 
+    /**
+     * All game logic is run here. Allows for pause/resume functionality
+     */
     private void runGameLogic() {
         while (isRunning) {
             // Game logic
