@@ -1,5 +1,9 @@
 package com.entities;
 
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+
 /**
  * This class creates the gun.
  *
@@ -46,5 +50,34 @@ public class Gun implements RunComponentI {
         if (gunElevation > MIN_GUN_ELEVATION) {
             this.gunElevation = MIN_GUN_ELEVATION;
         }
+    }
+
+    /**
+     * Fires the gun.
+     */
+    private void fire() {
+
+    }
+
+    /**
+     * Takes the gun graphics and adjusts it relative to the mouse.
+     */
+    public void alignGunToMouse() {
+        int[] mouseXY = new int[2];
+
+        Button btn = new Button();
+        btn.setVisible(false);
+
+        // Whenever the mouse is moved
+        btn.setOnMouseMoved(new EventHandler<MouseEvent>() {
+            // It will run this method
+            @Override
+            public void handle(MouseEvent event) {
+                // Gets the X coordinate of the mouse
+                mouseXY[0] = (int) event.getX();
+                // Gets the Y coordinate of the mouse
+                mouseXY[1] = (int) event.getY();
+            }
+        });
     }
 }

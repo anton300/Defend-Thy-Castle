@@ -1,18 +1,15 @@
 package com.run;
 
 import com.entities.GameWorld;
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class RunGame extends Application {
     // The window's dimensions in pixels
@@ -25,42 +22,46 @@ public class RunGame extends Application {
     private static int buttonClicked = -1;
 
     public static void main(String[] args) {
+        // Starts the game
         launch(args);
     }
 
     /**
-     * Where all the JavaFX code is executed.
+     * Where all the user created JavaFX code is executed.
      *
      * @param stage Reference variable
      * @throws Exception
      */
     @Override
-    public void start(Stage stage) throws IOException {
-        GameWorld world = new GameWorld();
+    public void start(Stage stage) {
+        System.out.println("Canvas values: " + CANVAS_HEIGHT + " " + CANVAS_WIDTH);
 
-        gameButton(world);
+//        Button btn = setUpStage(stage);
 
-        setUpStage(stage);
+//        gameButton(btn);
+
+        // Makes the stage (window) visible
+        stage.show();
     }
 
-    private void gameButton(GameWorld world) {
-        Button btn = new Button("Start Game");
-        btn.setLocation(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 4);
+    private void gameButton(Button btn) {
+        GameWorld world = new GameWorld();
+
+        btn.setWrapText(true);
         btn.setVisible(true);
 
-        btn.addActionListener(new ActionListener() {
+        btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                // Determines if the button was clicked or not.
+            public void handle(ActionEvent e) {                // Determines when to start/resume the game and pause it.
                 // 1 to start/resume the game, and -1 to pause it.
                 buttonClicked *= -1;
 
                 if (buttonClicked > 0) {
-                    btn.setLabel("Pause");
+                    btn.setText("Pause");
                     world.playGame();
 
                 } else {
-                    btn.setLabel("Resume");
+                    btn.setText("Resume");
                     world.playGame();
                 }
             }
@@ -70,9 +71,11 @@ public class RunGame extends Application {
     /**
      * Gives all the elements to make a window appear with the game on it.
      */
-    private void setUpStage(Stage stage) {
+    private Button setUpStage(Stage stage) {
         Group root = new Group();
-        Scene scene = new Scene(root);
+        Button btn = new Button("Start Game");
+
+        Scene scene = new Scene(btn);
 
         Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
         root.getChildren().add(canvas);
@@ -103,6 +106,6 @@ public class RunGame extends Application {
             }
         }.start(); */
 
-        stage.show();
+        return btn;
     }
 }

@@ -1,6 +1,6 @@
 package com.entities;
 
-import com.run.*;
+import com.run.RunGame;
 import javafx.scene.image.Image;
 
 /**
@@ -17,7 +17,9 @@ public class Bomb implements RunComponentI {
 
     public Bomb(int damage, int[] dropPoint, Image bombImage) {
         this.damage = damage;
-        this.dropPoint = dropPoint;
+        this.dropPoint[0] = dropPoint[0];
+        this.dropPoint[1] = dropPoint[1];
+
         this.areaOfEffect = computeBlastRadius();
         this.bombImage = bombImage;
     }
