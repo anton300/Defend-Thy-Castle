@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 /**
  * Where all the code and graphics is run.
  *
- * @author Anton Zenin
+ * @author Anton Zenin & Patryk Kownacki.
  */
 public class RunGame extends Application {
     // The window's (stage) dimensions in pixels
