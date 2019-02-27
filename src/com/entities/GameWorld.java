@@ -7,7 +7,11 @@ package com.entities;
  * @author Anton Zenin
  */
 public class GameWorld {
+    /* Allows for the pause/resume functionality
+     As well as making this variable to be used
+     many threads (what compiles code, line by line) */
     private volatile boolean isRunning = false;
+
     private Castle castle;
     // Monster variable
 
