@@ -11,11 +11,18 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * Where all the code and graphics is run.
+ *
+ * @author Anton Zenin
+ */
 public class RunGame extends Application {
-    // The window's dimensions in pixels
+    // The window's (stage) dimensions in pixels
     public static final int STAGE_WIDTH = 1000;
     public static final int STAGE_HEIGHT = 700;
 
+    /* The window's dimensions in pixels where all the
+     graphics are displayed and where the game runs */
     public static final int CANVAS_WIDTH = STAGE_WIDTH - 20;
     public static final int CANVAS_HEIGHT = STAGE_HEIGHT - 20;
 
@@ -30,7 +37,6 @@ public class RunGame extends Application {
      * Where all the user created JavaFX code is executed.
      *
      * @param stage Reference variable
-     * @throws Exception
      */
     @Override
     public void start(Stage stage) {
@@ -69,23 +75,12 @@ public class RunGame extends Application {
     }
 
     /**
-     * Gives all the elements to make a window appear with the game on it.
+     * Creates the graphics and renders them at or around 60 FPS.
+     *
+     * @param canvas Reference Variable.
      */
-    private Button setUpStage(Stage stage) {
-        Group root = new Group();
-        Button btn = new Button("Start Game");
-
-        Scene scene = new Scene(btn);
-
-        Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
-        root.getChildren().add(canvas);
-
-        stage.setScene(scene);
-        stage.setHeight(STAGE_HEIGHT);
-        stage.setWidth(STAGE_WIDTH);
-        stage.setTitle("Defend Thy Castle");
-
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+    private void createGraphics(Canvas canvas) {
+//        GraphicsContext gc = canvas.getGraphicsContext2D();
 
         /* Retrieved from:
          https://gamedevelopment.tutsplus.com
@@ -105,6 +100,27 @@ public class RunGame extends Application {
                 // Graphics here
             }
         }.start(); */
+    }
+
+    /**
+     * Gives all the elements to make a window appear with the game on it.
+     */
+    private Button setUpStage(Stage stage) {
+        Group root = new Group();
+        Button btn = new Button("Start Game");
+
+        Scene scene = new Scene(btn);
+
+        Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+        root.getChildren().add(canvas);
+
+        createGraphics(canvas);
+
+        stage.setScene(scene);
+        stage.setHeight(STAGE_HEIGHT);
+        stage.setWidth(STAGE_WIDTH);
+        stage.setTitle("Defend Thy Castle");
+
 
         return btn;
     }

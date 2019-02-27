@@ -7,7 +7,7 @@ import com.run.RunGame;
  *
  * @author Anton Zenin
  */
-public class Shooter implements RunComponentI {
+public class Shooter {
     private Gun gun;
     private Bomb bomb;
 
@@ -27,6 +27,4 @@ public class Shooter implements RunComponentI {
     public Bomb getBomb() {
         return bomb;
     }
-
-
 }

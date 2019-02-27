@@ -5,7 +5,7 @@ package com.entities;
  *
  * @author Anton Zenin
  */
-public class Castle implements RunComponentI {
+public class Castle {
     private Shooter shooter;
     private int health;
 

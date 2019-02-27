@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
  *
  * @author Anton Zenin
  */
-public class Bomb implements RunComponentI {
+public class Bomb {
     private int damage;
     private int[] blastRadius;
     private int[] dropPoint;

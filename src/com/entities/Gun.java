@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author Anton Zenin
  */
-public class Gun implements RunComponentI {
+public class Gun {
     private int damage;
     private int gunElevation;
     private Bullet bullet;
@@ -77,6 +77,22 @@ public class Gun implements RunComponentI {
                 mouseXY[0] = (int) event.getX();
                 // Gets the Y coordinate of the mouse
                 mouseXY[1] = (int) event.getY();
+
+                // Gun Graphics here
+
+                fireGun(btn);
+            }
+        });
+    }
+
+    public void fireGun(Button btn) {
+
+        // Whenever the mouse is clicked
+        btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            // It runs the code here
+            @Override
+            public void handle(MouseEvent event) {
+                fire();
             }
         });
     }
