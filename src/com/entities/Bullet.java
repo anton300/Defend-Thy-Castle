@@ -13,16 +13,16 @@ public class Bullet {
     // The point that the bullet has to go to
     private int[] travelToPoint = new int[2];
     // The point from the where the bullet has been fired
-    private int[] startPoint = new int[2];
+    private int[] firingPoint = new int[2];
 
     public Bullet(int damage, int damageBoost, int[] startPoint) {
         this.damage = damage;
         this.damageBoost = damageBoost;
 
         // X
-        this.startPoint[0] = startPoint[0];
+        this.firingPoint[0] = startPoint[0];
         // Y
-        this.startPoint[1] = startPoint[1];
+        this.firingPoint[1] = startPoint[1];
     }
 
     public int getDamage() {
