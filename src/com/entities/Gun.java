@@ -83,7 +83,7 @@ public class Gun {
         Button btn = new Button();
         btn.setVisible(false);
 
-        Rotate rotate = new Rotate(theta);
+        Rotate rotate = new Rotate(theta, firingPoint[0], firingPoint[1]);
 
         // Whenever the mouse is moved
         btn.setOnMouseMoved(new EventHandler<MouseEvent>() {
@@ -94,24 +94,25 @@ public class Gun {
                 target[0] = (int) event.getX();
                 // Gets the Y coordinate of the mouse
                 target[1] = (int) event.getY();
-                final int DISTANCE = (int) rotate.deltaTransform(target[0], target[1]).magnitude();
-
-                setGunElevation((int) rotate.getAngle());
 
                 // Gun Graphics here
 
-                fireGun(btn, graph);
+                fireGun(btn, graph, rotate);
             }
         });
     }
 
     /**
-     * Fires the gun whenever the mouse is clicked
+     * Fires the gun whenever the mouse is clicked.
      *
-     * @param btn   Reference Variable
-     * @param graph Reference Variable
+     * @param btn   Reference Variable.
+     * @param graph Reference Variable.
      */
-    private void fireGun(Button btn, GraphicsContext graph) {
+    private void fireGun(Button btn, GraphicsContext graph, Rotate rotate) {
+        // Computes the magnitude (length) of the vector
+        // from the gun to the mouse
+        final int DISTANCE = (int) rotate.deltaTransform(target[0], target[1]).magnitude();
+
         // Whenever the mouse is clicked
         btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             // It runs the code in here
