@@ -1,13 +1,13 @@
 package com.run;
 
 import com.entities.GameWorld;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -40,9 +40,7 @@ public class RunGame extends Application {
      */
     @Override
     public void start(Stage stage) {
-        System.out.println("Canvas values: " + CANVAS_HEIGHT + " " + CANVAS_WIDTH);
-
-//        Button btn = setUpStage(stage);
+        Button btn = setUpStage(stage);
 
 //        gameButton(btn);
 
@@ -53,7 +51,6 @@ public class RunGame extends Application {
     private void gameButton(Button btn) {
         GameWorld world = new GameWorld();
 
-        btn.setWrapText(true);
         btn.setVisible(true);
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -79,7 +76,7 @@ public class RunGame extends Application {
      *
      * @param canvas Reference Variable.
      */
-    private void createGraphics(Canvas canvas) {
+    private void createGameGraphics(Canvas canvas) {
 //        GraphicsContext gc = canvas.getGraphicsContext2D();
 
         /* Retrieved from:
@@ -114,13 +111,12 @@ public class RunGame extends Application {
         Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
         root.getChildren().add(canvas);
 
-        createGraphics(canvas);
+        createGameGraphics(canvas);
 
         stage.setScene(scene);
         stage.setHeight(STAGE_HEIGHT);
         stage.setWidth(STAGE_WIDTH);
         stage.setTitle("Defend Thy Castle");
-
 
         return btn;
     }

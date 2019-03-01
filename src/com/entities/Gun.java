@@ -14,11 +14,11 @@ import javafx.scene.transform.Rotate;
 public class Gun {
     private Bullet bullet;
     // The angle of the gun with respect to the mouse
-    private int gunElevation;
+    private double gunElevation;
     // What the gun is shooting
-    private int[] target = new int[2];
+    private double[] target = new double[2];
     // From where the gun is shooting
-    private int[] firingPoint = new int[2];
+    private double[] firingPoint = new double[2];
 
     // The range that you can aim. 10 to 170 degrees (160 degrees of freedom)
     public static final int MAX_GUN_ELEVATION = 10;
@@ -41,16 +41,16 @@ public class Gun {
         return bullet;
     }
 
-    public int getGunElevation() {
+    public double getGunElevation() {
         return gunElevation;
     }
 
     /**
-     * Sets the gun elevation within a range.
+     * Sets the gun elevation within a range of degrees.
      *
      * @param newGunElevation The new gun elevation.
      */
-    public void setGunElevation(int newGunElevation) {
+    public void setGunElevation(double newGunElevation) {
         // Gun elevation is in degrees. If the value is within the range of the elevation.
         // From 10 to 170 degrees, if it is in that range, then it will assign it to that value.
         if (newGunElevation >= MAX_GUN_ELEVATION && newGunElevation <= MIN_GUN_ELEVATION) {
@@ -85,24 +85,20 @@ public class Gun {
             @Override
             public void handle(MouseEvent event) {
                 // Gets the X coordinate of the mouse
-                target[0] = (int) event.getX();
+                target[0] = event.getX();
                 // Gets the Y coordinate of the mouse
-                target[1] = (int) event.getY();
+                target[1] = event.getY();
 
-                // Computes the magnitude (length) of the vector
-                // from the gun to the mouse
-                final int DISTANCE = (int) rotate.deltaTransform(target[0], target[1]).magnitude();
+                // Sets the angle for the gun to point at the target
+                // using Trig math
+                rotate.setAngle(Math.toDegrees(Math.atan(target[0] / target[1])));
 
-                // TODO
-                // Set the gun angle to the mouse's X & Y coordinates setAngle()
-                // with respect to the magnitude
-
-                // Update the gun graphics with the new elevation getAngle()
-                // and use the setGunElevation() method
+                // Sets the gun elevation to the calculated angle
+                setGunElevation(rotate.getAngle());
 
                 // Gun Graphics here
 
-                fireGun(btn, graph, DISTANCE);
+                fireGun(btn, graph, rotate);
             }
         });
     }
@@ -113,13 +109,17 @@ public class Gun {
      * @param btn   Reference Variable.
      * @param graph Reference Variable.
      */
-    private void fireGun(Button btn, GraphicsContext graph, int distance) {
+    private void fireGun(Button btn, GraphicsContext graph, Rotate rotate) {
+        // Computes the magnitude (length) of the vector
+        // from the gun to the mouse
+        final int DISTANCE = (int) rotate.deltaTransform(target[0], target[1]).magnitude();
+
         // Whenever the mouse is clicked
         btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             // It runs the code in here
             @Override
             public void handle(MouseEvent event) {
-                // Shoot the bullet along the magnitude of the vector
+                // Shoots the bullet along the magnitude of the vector
 
             }
         });
