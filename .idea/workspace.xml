@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40dbbd9d-6586-4a04-ad09-b1c92b9b3cf3" name="Default Changelist" comment="Finished aiming the gun at the mouse. Need graphics now.">
+    <list default="true" id="40dbbd9d-6586-4a04-ad09-b1c92b9b3cf3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/entities/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/entities/Shooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Shooter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/run/RunGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/run/RunGame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,15 +17,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Defend-Thy-Castle.vpdm/Class Diagram1.vpd">
-          <provider selected="true" editor-type-id="VPUMLDiagram" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/run/RunGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-557">
-              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="203">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,11 +28,16 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Defend-Thy-Castle.vpdm/Defend Thy Castle.vpd">
+          <provider selected="true" editor-type-id="VPUMLDiagram" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/entities/GameWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="874">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#615#616#0" expanded="true" />
                 <element signature="e#647#648#0" expanded="true" />
@@ -74,13 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/entities/Shooter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-              <folding>
-                <element signature="e#525#526#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#607#608#0" expanded="true" />
-              </folding>
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -194,7 +185,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551971057912" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551975916665" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -356,13 +347,21 @@
       <option name="project" value="LOCAL" />
       <updated>1551469396558</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Updated the graphics code and made things cleaner.">
+      <created>1551971154498</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1551971154498</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Properties Pane" order="0" weight="0.020134227" />
+      <window_info id="Properties Pane" order="0" weight="0.16308725" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Project Explorer" order="2" weight="0.33557048" />
       <window_info id="Designer" order="3" />
@@ -373,7 +372,7 @@
       <window_info id="Structure" order="8" sideWeight="0.5080527" side_tool="true" weight="0.16174497" />
       <window_info anchor="bottom" id="Message Pane" order="0" weight="0.07320644" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.329429" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="2" visible="true" weight="0.33089313" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.33089313" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
@@ -393,14 +392,14 @@
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info id="Properties Pane" order="0" weight="0.020134227" />
+      <window_info id="Properties Pane" order="0" weight="0.16308725" />
       <window_info id="Image Layers" order="1" />
-      <window_info id="Project Explorer" order="2" weight="0.33557048" />
+      <window_info active="true" id="Project Explorer" order="2" visible="true" weight="0.33557048" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" weight="0.3295302" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.4919473" visible="true" weight="0.16174497" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.4919473" weight="0.16174497" />
       <window_info id="Structure" order="8" sideWeight="0.5080527" side_tool="true" weight="0.16174497" />
       <window_info anchor="bottom" id="Message Pane" order="0" weight="0.07320644" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.329429" />
@@ -475,7 +474,8 @@
     <MESSAGE value="Deleted the interface." />
     <MESSAGE value="Adding Gun and bullet logic relative to the mouse" />
     <MESSAGE value="Finished aiming the gun at the mouse. Need graphics now." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished aiming the gun at the mouse. Need graphics now." />
+    <MESSAGE value="Updated the graphics code and made things cleaner." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the graphics code and made things cleaner." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
@@ -646,6 +646,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/javafx/scene/layout/StackPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="202" column="16" lean-forward="true" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="16" />
+          <folding>
+            <element signature="e#7314#7315#0" expanded="true" />
+            <element signature="e#7337#7338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/javafx/scene/control/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/GameWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/entities/Castle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -658,6 +691,13 @@
             <element signature="e#491#492#0" expanded="true" />
             <element signature="e#521#522#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/Shooter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -678,64 +718,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/javafx/scene/layout/StackPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="202" column="16" lean-forward="true" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="16" />
-          <folding>
-            <element signature="e#7314#7315#0" expanded="true" />
-            <element signature="e#7337#7338#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/Shooter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding>
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_202/javafx-src.zip!/javafx/scene/control/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/GameWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-            <element signature="e#791#792#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Defend-Thy-Castle.vpdm/Class Diagram1.vpd">
-      <provider selected="true" editor-type-id="VPUMLDiagram" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/run/RunGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-557">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="203">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Defend-Thy-Castle.vpdm/Defend Thy Castle.vpd">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="VPUMLDiagram" />
     </entry>
   </component>
   <component name="masterDetails">
