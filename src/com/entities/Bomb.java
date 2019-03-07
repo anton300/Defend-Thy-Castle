@@ -49,8 +49,8 @@ public class Bomb {
     }
 
     public void setDropPoint(int newX, int newY) {
-        if (newX < RunGame.CANVAS_WIDTH && newX > 0) {
-            if (newY < RunGame.CANVAS_HEIGHT && newY > 0) {
+        if (newX < RunGame.SCENE_WIDTH && newX > 0) {
+            if (newY < RunGame.SCENE_HEIGHT && newY > 0) {
                 this.dropPoint[0] = newX;
                 this.dropPoint[1] = newY;
             }

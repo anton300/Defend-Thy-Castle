@@ -1,14 +1,15 @@
 package com.run;
 
 import com.entities.GameWorld;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -21,10 +22,10 @@ public class RunGame extends Application {
     public static final int STAGE_WIDTH = 1000;
     public static final int STAGE_HEIGHT = 700;
 
-    /* The window's dimensions in pixels where all the
-     graphics are displayed and where the game runs */
-    public static final int CANVAS_WIDTH = STAGE_WIDTH - 20;
-    public static final int CANVAS_HEIGHT = STAGE_HEIGHT - 20;
+    // The window's dimensions in pixels where all the
+    // graphics are displayed and where the game runs
+    public static final int SCENE_WIDTH = STAGE_WIDTH - 20;
+    public static final int SCENE_HEIGHT = STAGE_HEIGHT - 20;
 
     private static int buttonClicked = -1;
 
@@ -36,7 +37,7 @@ public class RunGame extends Application {
     /**
      * Where all the user created JavaFX code is executed.
      *
-     * @param stage Reference variable
+     * @param stage Reference variable.
      */
     @Override
     public void start(Stage stage) {
@@ -51,21 +52,22 @@ public class RunGame extends Application {
     private void gameButton(Button btn) {
         GameWorld world = new GameWorld();
 
-        btn.setVisible(true);
-
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent e) {                // Determines when to start/resume the game and pause it.
-                // 1 to start/resume the game, and -1 to pause it.
+            public void handle(ActionEvent e) {
+                // Determines when to set the text of the button to pause or
+                // resume.
                 buttonClicked *= -1;
 
+                world.playGame();
+
+                // If the counter is 1
                 if (buttonClicked > 0) {
                     btn.setText("Pause");
-                    world.playGame();
 
+                    // If the counter is -1
                 } else {
                     btn.setText("Resume");
-                    world.playGame();
                 }
             }
         });
@@ -73,8 +75,6 @@ public class RunGame extends Application {
 
     /**
      * Creates the graphics and renders them at or around 60 FPS.
-     *
-     * @param canvas Reference Variable.
      */
     private void createGameGraphics(Canvas canvas) {
 //        GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -103,17 +103,25 @@ public class RunGame extends Application {
      * Gives all the elements to make a window appear with the game on it.
      */
     private Button setUpStage(Stage stage) {
-        Group root = new Group();
+        VBox pane = new VBox(5);
+
         Button btn = new Button("Start Game");
+        btn.setVisible(true);
 
-        Scene scene = new Scene(btn);
+        Canvas canvas = new Canvas(SCENE_WIDTH, SCENE_HEIGHT);
 
-        Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
-        root.getChildren().add(canvas);
+        pane.getChildren().addAll(canvas);
+        pane.setPadding(new Insets(15));
+
+        StackPane stackPane = new StackPane();
+        stackPane.getChildren().addAll(pane, btn);
+
+        Scene scene = new Scene(stackPane, SCENE_WIDTH, SCENE_HEIGHT);
 
         createGameGraphics(canvas);
 
         stage.setScene(scene);
+
         stage.setHeight(STAGE_HEIGHT);
         stage.setWidth(STAGE_WIDTH);
         stage.setTitle("Defend Thy Castle");

@@ -16,7 +16,7 @@ public class Shooter {
     public Shooter() {
         gun = new Gun(35, 0, GUN_ANCHOR_POINT);
 
-        int[] dropPointCoor = {RunGame.CANVAS_HEIGHT, RunGame.CANVAS_WIDTH / 2};
+        int[] dropPointCoor = {RunGame.SCENE_HEIGHT, RunGame.SCENE_WIDTH / 2};
         bomb = new Bomb(500, dropPointCoor, null);
     }
 
