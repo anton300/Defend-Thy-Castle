@@ -10,9 +10,14 @@ import javafx.scene.image.Image;
  */
 public class Bomb {
     private int damage;
-    private int[] blastRadius;
-    private int[] dropPoint;
-    private int[] areaOfEffect;
+    // The area that will kill any Monster
+    private int[] blastRadius = new int[2];
+
+    // The point from where the bomb will drop
+    private int[] dropPoint = new int[2];
+
+    // The graphics to show where the bomb will land
+    private int[] areaOfEffect = new int[2];
     private Image bombImage;
 
     public Bomb(int damage, int[] dropPoint, Image bombImage) {
@@ -20,7 +25,7 @@ public class Bomb {
         this.dropPoint[0] = dropPoint[0];
         this.dropPoint[1] = dropPoint[1];
 
-        this.areaOfEffect = computeBlastRadius();
+        computeBlastRadius();
         this.bombImage = bombImage;
     }
 
@@ -40,12 +45,11 @@ public class Bomb {
         this.damage = damage;
     }
 
-    public int[] computeBlastRadius() {
+    public void computeBlastRadius() {
         final int radius = 60;
         // The X coordinates relative to the bomb
         blastRadius[0] = dropPoint[0] + radius;
         blastRadius[1] = dropPoint[0] - radius;
-        return blastRadius;
     }
 
     public void setDropPoint(int newX, int newY) {

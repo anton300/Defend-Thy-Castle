@@ -41,9 +41,7 @@ public class RunGame extends Application {
      */
     @Override
     public void start(Stage stage) {
-        Button btn = setUpStage(stage);
-
-//        gameButton(btn);
+        setUpStage(stage);
 
         // Makes the stage (window) visible
         stage.show();
@@ -102,7 +100,7 @@ public class RunGame extends Application {
     /**
      * Gives all the elements to make a window appear with the game on it.
      */
-    private Button setUpStage(Stage stage) {
+    private void setUpStage(Stage stage) {
         VBox pane = new VBox(5);
 
         Button btn = new Button("Start Game");
@@ -116,6 +114,9 @@ public class RunGame extends Application {
         StackPane stackPane = new StackPane();
         stackPane.getChildren().addAll(pane, btn);
 
+        // The button that starts the game on the screen
+        gameButton(btn);
+
         Scene scene = new Scene(stackPane, SCENE_WIDTH, SCENE_HEIGHT);
 
         createGameGraphics(canvas);
@@ -125,7 +126,5 @@ public class RunGame extends Application {
         stage.setHeight(STAGE_HEIGHT);
         stage.setWidth(STAGE_WIDTH);
         stage.setTitle("Defend Thy Castle");
-
-        return btn;
     }
 }

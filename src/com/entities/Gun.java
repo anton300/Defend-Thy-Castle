@@ -7,7 +7,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.transform.Rotate;
 
 /**
- * This class creates the gun.
+ * This class creates the gun for the shooter.
  *
  * @author Anton Zenin.
  */

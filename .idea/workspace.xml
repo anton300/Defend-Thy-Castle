@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="40dbbd9d-6586-4a04-ad09-b1c92b9b3cf3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Defend-Thy-Castle.vpdm/Defend Thy Castle.vpd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/entities/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Bomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/entities/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Gun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/run/RunGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/run/RunGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vpproject/Defend-Thy-Castle.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/vpproject/Defend-Thy-Castle.vpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,21 +21,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/run/RunGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="137">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Defend-Thy-Castle.vpdm/Defend Thy Castle.vpd">
-          <provider selected="true" editor-type-id="VPUMLDiagram" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -70,8 +70,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/entities/Shooter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="217">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/entities/Bomb.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#861#862#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,10 +95,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/entities/Gun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4332">
-              <caret line="122" selection-start-line="122" selection-end-line="122" />
+            <state relative-caret-position="-49">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1227#1228#0" expanded="true" />
+                <element signature="e#1256#1257#0" expanded="true" />
+                <element signature="e#1295#1296#0" expanded="true" />
+                <element signature="e#1330#1331#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/entities/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1064">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="27">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -117,13 +137,13 @@
         <option value="$PROJECT_DIR$/src/com/entities/RunCompoentI.java" />
         <option value="$PROJECT_DIR$/src/com/entities/GameRun.java" />
         <option value="$PROJECT_DIR$/src/com/entities/RunComponentI.java" />
-        <option value="$PROJECT_DIR$/src/com/entities/Bomb.java" />
         <option value="$PROJECT_DIR$/src/com/entities/GameWorld.java" />
         <option value="$PROJECT_DIR$/src/com/entities/Castle.java" />
         <option value="$PROJECT_DIR$/src/com/entities/Shooter.java" />
         <option value="$PROJECT_DIR$/src/com/entities/Bullet.java" />
         <option value="$PROJECT_DIR$/src/com/entities/Gun.java" />
         <option value="$PROJECT_DIR$/src/com/run/RunGame.java" />
+        <option value="$PROJECT_DIR$/src/com/entities/Bomb.java" />
       </list>
     </option>
   </component>
@@ -144,6 +164,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,36 +178,14 @@
               <item name="Defend-Thy-Castle" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Defend-Thy-Castle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Defend-Thy-Castle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Defend-Thy-Castle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Defend-Thy-Castle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Defend-Thy-Castle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Defend-Thy-Castle" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="run" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551975916665" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551988308129" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -354,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551971154498</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="UML for Code">
+      <created>1551976094999</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1551976094999</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -368,17 +375,17 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" weight="0.3295302" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.4919473" weight="0.16174497" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.4919473" weight="0.16375838" />
       <window_info id="Structure" order="8" sideWeight="0.5080527" side_tool="true" weight="0.16174497" />
       <window_info anchor="bottom" id="Message Pane" order="0" weight="0.07320644" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.329429" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.33089313" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.329429" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.329429" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.27525622" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.54172766" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
@@ -394,16 +401,16 @@
     <layout-to-restore>
       <window_info id="Properties Pane" order="0" weight="0.16308725" />
       <window_info id="Image Layers" order="1" />
-      <window_info active="true" id="Project Explorer" order="2" visible="true" weight="0.33557048" />
+      <window_info id="Project Explorer" order="2" weight="0.33557048" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" weight="0.3295302" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.4919473" weight="0.16174497" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.4919473" visible="true" weight="0.16375838" />
       <window_info id="Structure" order="8" sideWeight="0.5080527" side_tool="true" weight="0.16174497" />
       <window_info anchor="bottom" id="Message Pane" order="0" weight="0.07320644" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.329429" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.33089313" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.33039647" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
@@ -475,7 +482,8 @@
     <MESSAGE value="Adding Gun and bullet logic relative to the mouse" />
     <MESSAGE value="Finished aiming the gun at the mouse. Need graphics now." />
     <MESSAGE value="Updated the graphics code and made things cleaner." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the graphics code and made things cleaner." />
+    <MESSAGE value="UML for Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="UML for Code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
@@ -543,16 +551,6 @@
             <element signature="e#26265#26266#0" expanded="true" />
             <element signature="e#26470#26471#0" expanded="true" />
             <element signature="e#26528#26529#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/Bomb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -694,43 +692,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/Shooter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Defend-Thy-Castle.vpdm/Defend Thy Castle.vpd">
+      <provider editor-type-id="VPUMLDiagram" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/entities/Gun.java">
+    <entry file="file://$PROJECT_DIR$/vpproject/Defend-Thy-Castle.vpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4332">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="228">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/entities/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="27">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/Gun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1295#1296#0" expanded="true" />
+            <element signature="e#1330#1331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/Shooter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/entities/Bomb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/run/RunGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="137">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Defend-Thy-Castle.vpdm/Defend Thy Castle.vpd">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="VPUMLDiagram" />
     </entry>
   </component>
   <component name="masterDetails">
