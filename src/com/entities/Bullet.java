@@ -3,9 +3,10 @@ package com.entities;
 /**
  * This class creates the bullet with it's physics.
  *
- * @author Anton Zenin & Patryk
+ * @author Anton Zenin.
  */
 public class Bullet {
+    // The speed of the Bullet
     private final int velocity = 5;
     private int damage;
     private int damageBoost;
@@ -29,10 +30,6 @@ public class Bullet {
         return damage;
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
     public int getDamageBoost() {
         return damageBoost;
     }
@@ -45,6 +42,10 @@ public class Bullet {
         this.damage += damageBoost;
     }
 
+    public void setDamageToNormal() {
+        this.damage -= damageBoost;
+    }
+
     public int[] getTravelToPoint() {
         return travelToPoint;
     }
@@ -52,8 +53,17 @@ public class Bullet {
     /**
      * The setter for the travel point
      */
-    public void travelTo(int[] mouseXY) {
+    public void setTravelToPoint(int[] mouseXY) {
         this.travelToPoint[0] = mouseXY[0];
         this.travelToPoint[1] = mouseXY[1];
+    }
+
+    public int[] getFiringPoint() {
+        return firingPoint;
+    }
+
+    public void setFiringPoint(int X, int Y) {
+        this.firingPoint[0] = X;
+        this.firingPoint[1] = Y;
     }
 }

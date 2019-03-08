@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 /**
  * This class creates the bomb to kill the monsters and it's physics.
  *
- * @author Anton Zenin
+ * @author Anton Zenin.
  */
 public class Bomb {
     private int damage;

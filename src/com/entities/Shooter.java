@@ -5,7 +5,7 @@ import com.run.RunGame;
 /**
  * This class creates the shooter with all it's components to play the game.
  *
- * @author Anton Zenin
+ * @author Anton Zenin.
  */
 public class Shooter {
     private Gun gun;

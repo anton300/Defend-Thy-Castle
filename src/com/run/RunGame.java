@@ -1,6 +1,7 @@
 package com.run;
 
 import com.entities.GameWorld;
+import com.entities.HandleGraphics;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,9 +9,15 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Where all the code and graphics is run.
@@ -57,8 +64,6 @@ public class RunGame extends Application {
                 // resume.
                 buttonClicked *= -1;
 
-                world.playGame();
-
                 // If the counter is 1
                 if (buttonClicked > 0) {
                     btn.setText("Pause");
@@ -67,34 +72,9 @@ public class RunGame extends Application {
                 } else {
                     btn.setText("Resume");
                 }
+//                world.playGame();
             }
         });
-    }
-
-    /**
-     * Creates the graphics and renders them at or around 60 FPS.
-     */
-    private void createGameGraphics(Canvas canvas) {
-//        GraphicsContext gc = canvas.getGraphicsContext2D();
-
-        /* Retrieved from:
-         https://gamedevelopment.tutsplus.com
-         /tutorials/introduction-to-javafx-for-game-development--cms-23835
-         Lee Stemkoski - A professor of mathematics and
-         computer science with interests in 3D graphics
-         and game development, 19th of May, 2015. */
-
-        // Gets the time in nano seconds
-        /* final long startNanoTime = System.nanoTime();
-
-        // Allows for 60 FPS graphics rendering
-        new AnimationTimer() {
-            public void handle(long currentNanoTime) {
-                double time = (currentNanoTime - startNanoTime) / 1000000000.0d;
-
-                // Graphics here
-            }
-        }.start(); */
     }
 
     /**
@@ -108,23 +88,40 @@ public class RunGame extends Application {
 
         Canvas canvas = new Canvas(SCENE_WIDTH, SCENE_HEIGHT);
 
-        pane.getChildren().addAll(canvas);
+        // Loads in the graphics and the canvas that they are on
+        addImages();
+        HandleGraphics.setCanvas(canvas);
+
+        pane.getChildren().addAll(HandleGraphics.getCanvas());
+
         pane.setPadding(new Insets(15));
 
         StackPane stackPane = new StackPane();
-        stackPane.getChildren().addAll(pane, btn);
 
         // The button that starts the game on the screen
         gameButton(btn);
 
-        Scene scene = new Scene(stackPane, SCENE_WIDTH, SCENE_HEIGHT);
+        stackPane.getChildren().addAll(pane, btn);
 
-        createGameGraphics(canvas);
+        Scene scene = new Scene(stackPane, SCENE_WIDTH, SCENE_HEIGHT);
 
         stage.setScene(scene);
 
         stage.setHeight(STAGE_HEIGHT);
         stage.setWidth(STAGE_WIDTH);
         stage.setTitle("Defend Thy Castle");
+    }
+
+    private void addImages() {
+        try {
+            HandleGraphics.addGraphic(new Image(new FileInputStream("images/castle.png")));
+
+            HandleGraphics.addGraphic(new Image(new FileInputStream("images/clouds.jpg")));
+
+            HandleGraphics.addGraphic(new Image(new FileInputStream("images/ground.png")));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -3,7 +3,7 @@ package com.entities;
 /**
  * The castle object that contains the castle's health and shooter.
  *
- * @author Anton Zenin
+ * @author Anton Zenin.
  */
 public class Castle {
     private Shooter shooter;

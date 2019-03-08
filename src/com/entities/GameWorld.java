@@ -4,7 +4,7 @@ package com.entities;
  * This class combines all the game entities (components, classes) into one class.
  * Making the overall code simpler and straightforward.
  *
- * @author Anton Zenin
+ * @author Anton Zenin.
  */
 public class GameWorld {
     /* Allows for the pause/resume functionality
