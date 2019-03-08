@@ -1,5 +1,6 @@
 package com.entities;
 
+import com.run.RunGame;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
@@ -121,6 +122,23 @@ public class Gun {
             public void handle(MouseEvent event) {
                 // Shoots the bullet along the magnitude of the vector
 
+                // TODO
+                // Make a bullet graphic
+
+                while (true) {
+                    // Iterate Bullet graphics
+
+                    // If the Bullet hits the edge of the Map
+                    if (RunGame.SCENE_WIDTH) {
+                        // Set the graphics to null
+                        // Exit the loop
+                    }
+
+                    if (RunGame.SCENE_HEIGHT) {
+                        // Set the graphics to null
+                        // Exit the loop
+                    }
+                }
             }
         });
     }
