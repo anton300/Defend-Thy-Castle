@@ -129,15 +129,15 @@ public class Gun {
                     // Iterate Bullet graphics
 
                     // If the Bullet hits the edge of the Map
-                    if (RunGame.SCENE_WIDTH) {
-                        // Set the graphics to null
-                        // Exit the loop
-                    }
-
-                    if (RunGame.SCENE_HEIGHT) {
-                        // Set the graphics to null
-                        // Exit the loop
-                    }
+//                    if (RunGame.SCENE_WIDTH) {
+//                        // Set the graphics to null
+//                        // Exit the loop
+//                    }
+//
+//                    if (RunGame.SCENE_HEIGHT) {
+//                        // Set the graphics to null
+//                        // Exit the loop
+//                    }
                 }
             }
         });

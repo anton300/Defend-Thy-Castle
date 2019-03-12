@@ -6,12 +6,14 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -81,32 +83,28 @@ public class RunGame extends Application {
      * Gives all the elements to make a window appear with the game on it.
      */
     private void setUpStage(Stage stage) {
-        VBox pane = new VBox(5);
+        Group root = new Group();
+        Canvas background = new Canvas();
+        Canvas ground = new Canvas();
+        Canvas shooter = new Canvas();
+        Canvas gun = new Canvas();
+        Canvas bullet = new Canvas();
+        Canvas castle = new Canvas();
+        Canvas monsters = new Canvas();
+        Button startButton = new Button("Start Game");
 
-        Button btn = new Button("Start Game");
-        btn.setVisible(true);
+        try {
 
-        Canvas canvas = new Canvas(SCENE_WIDTH, SCENE_HEIGHT);
 
-        // Loads in the graphics and the canvas that they are on
-        addImages();
-        HandleGraphics.setCanvas(canvas);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
-        pane.getChildren().addAll(HandleGraphics.getCanvas());
+        root.getChildren().addAll(background, ground, gun, shooter, castle, monsters, bullet, startButton);
 
-        pane.setPadding(new Insets(15));
-
-        StackPane stackPane = new StackPane();
-
-        // The button that starts the game on the screen
-        gameButton(btn);
-
-        stackPane.getChildren().addAll(pane, btn);
-
-        Scene scene = new Scene(stackPane, SCENE_WIDTH, SCENE_HEIGHT);
+        Scene scene = new Scene(root);
 
         stage.setScene(scene);
-
         stage.setHeight(STAGE_HEIGHT);
         stage.setWidth(STAGE_WIDTH);
         stage.setTitle("Defend Thy Castle");
@@ -114,11 +112,11 @@ public class RunGame extends Application {
 
     private void addImages() {
         try {
-            HandleGraphics.addGraphic(new Image(new FileInputStream("images/castle.png")));
+            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("C:/Users/Anton/IdeaProjects/Defend-Thy-Castle/images/castle.png"))));
 
-            HandleGraphics.addGraphic(new Image(new FileInputStream("images/clouds.jpg")));
+            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("C:/Users/Anton/IdeaProjects/Defend-Thy-Castle/images/clouds.jpg"))));
 
-            HandleGraphics.addGraphic(new Image(new FileInputStream("images/ground.png")));
+            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("C:/Users/Anton/IdeaProjects/Defend-Thy-Castle/images/ground.png"))));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -1,10 +1,10 @@
 package com.entities;
 
 import javafx.animation.AnimationTimer;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,15 +16,15 @@ import java.util.List;
  * @author Anton Zenin.
  */
 public class HandleGraphics {
-    private static List<Image> graphics = new ArrayList<>();
-    private static Canvas canvas;
+    private static List<ImagePattern> graphics = new ArrayList<>();
+    private GraphicsContext graphicsContext;
 
-    public static Canvas getCanvas() {
-        return canvas;
+    public GraphicsContext getGraphicsContext() {
+        return graphicsContext;
     }
 
-    public static void setCanvas(Canvas canvas) {
-        HandleGraphics.canvas = canvas;
+    public void setGraphicsContext(GraphicsContext graphicsContext) {
+        this.graphicsContext = graphicsContext;
     }
 
     /**
@@ -34,8 +34,8 @@ public class HandleGraphics {
      * @param name the name of the graphic.
      * @return An Image.
      */
-    public static Image getGraphic(String name) {
-        for (Image img : graphics) {
+    public static ImagePattern getGraphic(String name) {
+        for (ImagePattern img : graphics) {
             if (img.toString().contains(name)) {
                 return img;
             }
@@ -48,7 +48,7 @@ public class HandleGraphics {
      *
      * @param graphics Another List of graphics, containing Images.
      */
-    public static void setGraphics(List<Image> graphics) {
+    public static void setGraphics(List<ImagePattern> graphics) {
         if (graphics != null) {
             if (!graphics.isEmpty()) {
                 HandleGraphics.graphics.addAll(graphics);
@@ -62,11 +62,11 @@ public class HandleGraphics {
      *
      * @param graphic The Image that you want to add.
      */
-    public static void addGraphic(Image graphic) {
+    public static void addGraphic(ImagePattern graphic) throws FileNotFoundException {
         if (graphic != null) {
             graphics.add(graphic);
         }
-        throw new NullPointerException("The image you are putting in is does not exist");
+        throw new FileNotFoundException("The image you are putting in is does not exist");
     }
 
     /**
@@ -88,8 +88,7 @@ public class HandleGraphics {
     /**
      * Creates the graphics and renders them at or around 60 FPS.
      */
-    public static void render() {
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+    public static void render(GraphicsContext gc) {
 
         /* Retrieved from:
          https://gamedevelopment.tutsplus.com
