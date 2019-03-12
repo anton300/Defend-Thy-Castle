@@ -5,21 +5,17 @@ import com.entities.HandleGraphics;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.*;
 import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 /**
  * Where all the code and graphics is run.
@@ -84,23 +80,21 @@ public class RunGame extends Application {
      */
     private void setUpStage(Stage stage) {
         Group root = new Group();
-        Canvas background = new Canvas();
-        Canvas ground = new Canvas();
-        Canvas shooter = new Canvas();
-        Canvas gun = new Canvas();
-        Canvas bullet = new Canvas();
-        Canvas castle = new Canvas();
-        Canvas monsters = new Canvas();
+        Canvas[] images = new Canvas[7];
         Button startButton = new Button("Start Game");
 
-        try {
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        for (int i = 0; i < images.length; i++) {
+            images[i] = new Canvas();
         }
 
-        root.getChildren().addAll(background, ground, gun, shooter, castle, monsters, bullet, startButton);
+        // Adds the images to the HandleGraphics static Class
+        addImages();
+
+        // Adds the to the Canvas's
+        setImages(images);
+
+        // Cell 0: background, 1: ground, 2: gun, 3: shooter, 4: castle, 5: monsters, 6: bullet
+        root.getChildren().addAll(images[0], images[1], images[2], images[3], images[4], images[5], images[6], startButton);
 
         Scene scene = new Scene(root);
 
@@ -110,13 +104,29 @@ public class RunGame extends Application {
         stage.setTitle("Defend Thy Castle");
     }
 
+    /**
+     * Sets each graphic to a Canvas.
+     *
+     * @param images Canvas Array Reference Variable.
+     */
+    private void setImages(Canvas[] images) {
+        GraphicsContext context;
+
+        for (int i = 0; i < images.length; i++) {
+            context = images[i].getGraphicsContext2D();
+        }
+    }
+
+    /**
+     * Adds the images to the static HandleGraphics class.
+     */
     private void addImages() {
         try {
-            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("C:/Users/Anton/IdeaProjects/Defend-Thy-Castle/images/castle.png"))));
+            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("images/castle.png"))));
 
-            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("C:/Users/Anton/IdeaProjects/Defend-Thy-Castle/images/clouds.jpg"))));
+            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("images/clouds.jpg"))));
 
-            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("C:/Users/Anton/IdeaProjects/Defend-Thy-Castle/images/ground.png"))));
+            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("images/ground.png"))));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
