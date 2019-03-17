@@ -8,9 +8,9 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
 
@@ -52,8 +52,14 @@ public class RunGame extends Application {
         stage.show();
     }
 
-    private void gameButton(Button btn) {
-        GameWorld world = new GameWorld();
+    /**
+     * Allows for the player to start the game, pause and resume it.
+     *
+     * @param btn   Reference Variable.
+     * @param scene Reference Variable.
+     */
+    private void gameButton(Button btn, Scene scene) {
+        GameWorld world = new GameWorld(scene);
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -80,23 +86,35 @@ public class RunGame extends Application {
      */
     private void setUpStage(Stage stage) {
         Group root = new Group();
-        Canvas[] images = new Canvas[7];
-        Button startButton = new Button("Start Game");
 
+        Canvas[] images = new Canvas[4];
+
+        Button startButton = new Button("Start Game");
+        startButton.setVisible(true);
+
+        // Initializes the Canvas
         for (int i = 0; i < images.length; i++) {
             images[i] = new Canvas();
         }
 
-        // Adds the images to the HandleGraphics static Class
+        // Loads the background images for the Canvas'
+        addCanvasBackgrounds();
+
+        // Loads the individual images to use for the Nodes
         addImages();
 
-        // Adds the to the Canvas's
-        setImages(images);
+        // Adds the images to the Canvas
+        setCanvasBackgrounds(images, root);
 
-        // Cell 0: background, 1: ground, 2: gun, 3: shooter, 4: castle, 5: monsters, 6: bullet
-        root.getChildren().addAll(images[0], images[1], images[2], images[3], images[4], images[5], images[6], startButton);
+        root.getChildren().add(startButton);
+
+        // Setting the layout of the button
+        root.getChildren().get(root.getChildren().size() - 1).setTranslateX(SCENE_WIDTH / 2);
+        root.getChildren().get(root.getChildren().size() - 1).setTranslateY(SCENE_HEIGHT / 10);
 
         Scene scene = new Scene(root);
+
+        gameButton(startButton, scene);
 
         stage.setScene(scene);
         stage.setHeight(STAGE_HEIGHT);
@@ -109,24 +127,39 @@ public class RunGame extends Application {
      *
      * @param images Canvas Array Reference Variable.
      */
-    private void setImages(Canvas[] images) {
-        GraphicsContext context;
+    private Group setCanvasBackgrounds(Canvas[] images, Group root) {
 
+        // Sets the all the Canvas' backgrounds to an image
         for (int i = 0; i < images.length; i++) {
-            context = images[i].getGraphicsContext2D();
+            images[i].getGraphicsContext2D().setFill(HandleGraphics.getBackground(i));
+
+            root.getChildren().add(images[i]);
         }
+        return root;
     }
 
     /**
      * Adds the images to the static HandleGraphics class.
      */
+    private void addCanvasBackgrounds() {
+        // Cell 0: backgroundCanvas, 1: groundCanvas, 2: castleCanvas, 3: monsterCanvas.
+        try {
+            HandleGraphics.addCanvasBackground(new ImagePattern(new Image(new FileInputStream("src/com/images/backgroundCanvas.jpg"))));
+            HandleGraphics.addCanvasBackground(new ImagePattern(new Image(new FileInputStream("src/com/images/groundCanvas.png"))));
+            HandleGraphics.addCanvasBackground(new ImagePattern(new Image(new FileInputStream("src/com/images/castleCanvas.png"))));
+            HandleGraphics.addCanvasBackground(new ImagePattern(new Image(new FileInputStream("src/com/images/monsterCanvas.png"))));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void addImages() {
         try {
-            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("images/castle.png"))));
-
-            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("images/clouds.jpg"))));
-
-            HandleGraphics.addGraphic(new ImagePattern(new Image(new FileInputStream("images/ground.png"))));
+            // Cell 0: Gun, 1: Bullet, 2: Shooter.
+            HandleGraphics.addImage(new ImagePattern(new Image(new FileInputStream("src/com/images/gun.png"))));
+            HandleGraphics.addImage(new ImagePattern(new Image(new FileInputStream("src/com/images/bullet.png"))));
+            HandleGraphics.addImage(new ImagePattern(new Image(new FileInputStream("src/com/images/shooter.png"))));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

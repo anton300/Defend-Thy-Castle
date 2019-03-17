@@ -1,12 +1,5 @@
 package com.entities;
 
-import com.run.RunGame;
-import javafx.event.EventHandler;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.transform.Rotate;
-
 /**
  * This class creates the gun for the shooter.
  *
@@ -16,8 +9,7 @@ public class Gun {
     private Bullet bullet;
     // The angle of the gun with respect to the mouse
     private double gunElevation;
-    // What the gun is shooting
-    private double[] target = new double[2];
+
     // From where the gun is shooting
     private double[] firingPoint = new double[2];
 
@@ -69,77 +61,5 @@ public class Gun {
         if (newGunElevation > MIN_GUN_ELEVATION) {
             gunElevation = MIN_GUN_ELEVATION;
         }
-    }
-
-    /**
-     * Takes the gun graphics and aligns it to the mouse.
-     */
-    public void aimGun(GraphicsContext graph) {
-        Button btn = new Button();
-        btn.setVisible(false);
-
-        Rotate rotate = new Rotate(gunElevation, firingPoint[0], firingPoint[1]);
-
-        // Whenever the mouse is moved
-        btn.setOnMouseMoved(new EventHandler<MouseEvent>() {
-            // It will run this method
-            @Override
-            public void handle(MouseEvent event) {
-                // Gets the X coordinate of the mouse
-                target[0] = event.getX();
-                // Gets the Y coordinate of the mouse
-                target[1] = event.getY();
-
-                // Sets the angle for the gun to point at the target
-                // using Trig math
-                rotate.setAngle(Math.toDegrees(Math.atan(target[0] / target[1])));
-
-                // Sets the gun elevation to the calculated angle
-                setGunElevation(rotate.getAngle());
-
-                // Gun Graphics here
-
-                fireGun(btn, graph, rotate);
-            }
-        });
-    }
-
-    /**
-     * Fires the gun whenever the mouse is clicked.
-     *
-     * @param btn   Reference Variable.
-     * @param graph Reference Variable.
-     */
-    private void fireGun(Button btn, GraphicsContext graph, Rotate rotate) {
-        // Computes the magnitude (length) of the vector
-        // from the gun to the mouse
-        final int DISTANCE = (int) rotate.deltaTransform(target[0], target[1]).magnitude();
-
-        // Whenever the mouse is clicked
-        btn.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            // It runs the code in here
-            @Override
-            public void handle(MouseEvent event) {
-                // Shoots the bullet along the magnitude of the vector
-
-                // TODO
-                // Make a bullet graphic
-
-                while (true) {
-                    // Iterate Bullet graphics
-
-                    // If the Bullet hits the edge of the Map
-//                    if (RunGame.SCENE_WIDTH) {
-//                        // Set the graphics to null
-//                        // Exit the loop
-//                    }
-//
-//                    if (RunGame.SCENE_HEIGHT) {
-//                        // Set the graphics to null
-//                        // Exit the loop
-//                    }
-                }
-            }
-        });
     }
 }

@@ -1,5 +1,7 @@
 package com.entities;
 
+import javafx.scene.Scene;
+
 /**
  * This class combines all the game entities (components, classes) into one class.
  * Making the overall code simpler and straightforward.
@@ -15,8 +17,9 @@ public class GameWorld {
     private Castle castle;
     // Monster variable
 
-    public GameWorld() {
-        castle = new Castle(new Shooter(), 100);
+    public GameWorld(Scene scene) {
+
+        castle = new Castle(new Shooter(scene), 100);
         // Monster instance
     }
 
