@@ -6,32 +6,32 @@ package com.entities;
  * @author Anton Zenin.
  */
 public class Gun {
-    private Bullet bullet;
+    private Laser laser;
     // The angle of the gun with respect to the mouse
     private double gunElevation;
 
     // From where the gun is shooting
     private double[] firingPoint = new double[2];
 
-    // The range that you can aim. 10 to 170 degrees (160 degrees of freedom)
-    public static final int MAX_GUN_ELEVATION = 10;
-    public static final int MIN_GUN_ELEVATION = 170;
+    // The range that you can aim. 0 to 180 degrees
+    public static final int MAX_GUN_ELEVATION = 0;
+    public static final int MIN_GUN_ELEVATION = 180;
 
     // Constructor
     public Gun(int damage, int damageBoost, int[] firingPoint) {
         this.gunElevation = 90;
 
         // Creates the point from which the code knows where
-        // shoot the bullet from, the origin point (0, 0)
+        // shoot the laser from, the origin point (0, 0)
         this.firingPoint[0] = firingPoint[0];
         this.firingPoint[1] = firingPoint[1];
 
-        // Creates the bullet
-        this.bullet = new Bullet(damage, damageBoost, firingPoint);
+        // Creates the laser
+        this.laser = new Laser(damage, damageBoost, firingPoint);
     }
 
-    public Bullet getBullet() {
-        return bullet;
+    public Laser getLaser() {
+        return laser;
     }
 
     public double getGunElevation() {

@@ -14,12 +14,12 @@ public class GameWorld {
      many threads (what compiles code, line by line) */
     private volatile boolean isRunning = false;
 
-    private Castle castle;
+    private Base base;
     // Monster variable
 
     public GameWorld(Scene scene) {
 
-        castle = new Castle(new Shooter(scene), 100);
+        base = new Base(new SpaceShip(scene), 100);
         // Monster instance
     }
 
@@ -31,8 +31,8 @@ public class GameWorld {
         isRunning = running;
     }
 
-    public Castle getCastle() {
-        return castle;
+    public Base getBase() {
+        return base;
     }
 
     /**
