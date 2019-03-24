@@ -12,22 +12,38 @@ public class GameWorld {
     /* Allows for the pause/resume functionality
      As well as making this variable to be used
      many threads (what compiles code, line by line) */
-    private volatile boolean isRunning = false;
+    private volatile static boolean isRunning = false;
+    private static Thread gameThread;
 
     private Base base;
     // Monster variable
 
-    public GameWorld(Scene scene) {
+    private static boolean exit = true;
 
+    private GameWorld(Scene scene) {
+        gameThread = new Thread();
         base = new Base(new SpaceShip(scene), 100);
         // Monster instance
+
+        gameThread.start();
+
+        // The first thread breaks out of the loop and returns back to the main class
+        if (exit) {
+            exit = false;
+        } else {
+            playGame();
+        }
     }
 
-    public boolean isRunning() {
+    public static void getInstance(Scene scene) {
+        GameWorld world = new GameWorld(scene);
+    }
+
+    public static boolean isRunning() {
         return isRunning;
     }
 
-    public void setRunning(boolean running) {
+    public static void setRunning(boolean running) {
         isRunning = running;
     }
 
@@ -39,18 +55,19 @@ public class GameWorld {
      * The infinite outer loop that runs the game until the player clicks
      * the exit button of the window.
      */
-    public void playGame() {
+    private void playGame() {
+        // Outer infinite game loop
         while (true) {
             runGameLogic();
         }
     }
 
     /**
-     * All game logic is run here. Allows for pause/resume functionality
+     * All game logic is run here. Allows for pause/resume functionality.
      */
     private void runGameLogic() {
         while (isRunning) {
-            // Game logic
+            System.out.println("Game is " + isRunning);
         }
     }
 }

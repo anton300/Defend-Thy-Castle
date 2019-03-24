@@ -77,35 +77,53 @@ public class SpaceShip {
         // Whenever the mouse is clicked
         scene.setOnMouseClicked(event -> {
             // It runs the code in here
-            // Shoots the bullet along the magnitude of the vector
+            // Shoots the laser along the magnitude of the vector
 
-            final Rectangle laser = new Rectangle();
+            Rectangle laser = new Rectangle();
             laser.setFill(Color.RED);
             laser.setWidth(15);
             laser.setHeight(8);
 
-            laser.setLayoutX(175);
-            laser.setLayoutY(LaunchGame.positionOfShipY);
+            // Places the laser to where it must shot from (the Spaceship)
+            // The X and Y coordinates
+            laser.setLayoutX(FIRING_POINT[0]);
+            laser.setLayoutY(FIRING_POINT[1]);
 
-            final PathTransition move = new PathTransition();
+            PathTransition move = new PathTransition();
 
-            move.setDuration(Duration.seconds(1));
+            // A circle to indicate where the laser should go
+            Circle dest = new Circle(1);
+            dest.setVisible(false);
+            dest.setLayoutX(target[0] + 1000);
+            dest.setLayoutY(target[1] + 1000);
+
+            // Where the laser needs to go
+            move.setNode(dest);
+            // The graphic that is being moved
             move.setPath(laser);
-            // If the Laser hits the edge of the Map
-//                    if (RunGame.SCENE_WIDTH) {
-//                        // Set the graphics to null
-//                        // Exit the loop
-//                    }
-//
-//                    if (RunGame.SCENE_HEIGHT) {
-//                        // Set the graphics to null
-//                        // Exit the loop
-//                    }
+            // How long the laser will take to reach it's destination
+            move.setDuration(Duration.seconds(1));
+            move.play();
 
             /* TODO
              * If the bullet hits a Monster, then call the Monster's super class
              * damage method to damage the monster that it hit.
              * Transfer the bullet data to the Monster, and take away health. */
+
+            // When the laser hits the screen's boundaries
+            if (laser.getY() <= 0) {
+                laser = null;
+                move = null;
+
+            } else if (laser.getY() >= LaunchGame.SCENE_HEIGHT) {
+                laser = null;
+                move = null;
+            }
+
+            if (laser.getX() >= LaunchGame.SCENE_WIDTH) {
+                laser = null;
+                move = null;
+            }
         });
     }
 }
