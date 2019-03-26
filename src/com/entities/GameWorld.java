@@ -4,35 +4,22 @@ import javafx.scene.Scene;
 
 /**
  * This class combines all the game entities (components, classes) into one class.
- * Making the overall code simpler and straightforward.
+ * Making the overall code simpler and straightforward. A singleton class.
  *
  * @author Anton Zenin.
  */
-public class GameWorld {
+public class GameWorld extends GameThreader {
     /* Allows for the pause/resume functionality
      As well as making this variable to be used
      many threads (what compiles code, line by line) */
     private volatile static boolean isRunning = false;
-    private static Thread gameThread;
 
     private Base base;
     // Monster variable
 
-    private static boolean exit = true;
-
     private GameWorld(Scene scene) {
-        gameThread = new Thread();
         base = new Base(new SpaceShip(scene), 100);
         // Monster instance
-
-        gameThread.start();
-
-        // The first thread breaks out of the loop and returns back to the main class
-        if (exit) {
-            exit = false;
-        } else {
-            playGame();
-        }
     }
 
     public static void getInstance(Scene scene) {
@@ -67,7 +54,7 @@ public class GameWorld {
      */
     private void runGameLogic() {
         while (isRunning) {
-            System.out.println("Game is " + isRunning);
+
         }
     }
 }

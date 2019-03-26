@@ -70,9 +70,6 @@ public class SpaceShip {
      * @param rotate Reference Variable.
      */
     private void fireGun(Scene scene, Rotate rotate) {
-        // Computes the magnitude (length) of the vector
-        // from the gun to the mouse
-        final int DISTANCE = (int) rotate.deltaTransform(target[0], target[1]).magnitude();
 
         // Whenever the mouse is clicked
         scene.setOnMouseClicked(event -> {
