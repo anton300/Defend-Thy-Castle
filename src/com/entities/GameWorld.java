@@ -1,5 +1,6 @@
 package com.entities;
 
+import com.run.LaunchGame;
 import javafx.scene.Scene;
 
 /**
@@ -15,22 +16,20 @@ public class GameWorld extends GameThreader {
     private volatile static boolean isRunning = false;
 
     private Base base;
-    // Monster variable
+    private SpaceShip spaceShip;
+    // Monster variables
 
-    private GameWorld(Scene scene) {
-        base = new Base(new SpaceShip(scene), 100);
+    public GameWorld(Scene scene) {
+        spaceShip = new SpaceShip(scene);
+        base = new Base(spaceShip, 100);
         // Monster instance
     }
 
-    public static void getInstance(Scene scene) {
-        GameWorld world = new GameWorld(scene);
-    }
-
-    public static boolean isRunning() {
+    public boolean isRunning() {
         return isRunning;
     }
 
-    public static void setRunning(boolean running) {
+    public void setRunning(boolean running) {
         isRunning = running;
     }
 
@@ -42,19 +41,20 @@ public class GameWorld extends GameThreader {
      * The infinite outer loop that runs the game until the player clicks
      * the exit button of the window.
      */
-    private void playGame() {
+    public void playGame() {
         // Outer infinite game loop
         while (true) {
-            runGameLogic();
+            doTask();
         }
     }
 
     /**
      * All game logic is run here. Allows for pause/resume functionality.
      */
-    private void runGameLogic() {
-        while (isRunning) {
-
-        }
+    @Override
+    protected void doTask() {
+        getGameLogicThread().submit(() -> {
+            getBase().getSpaceShip().flySpaceship(LaunchGame.BUTTON_ONE);
+        });
     }
 }

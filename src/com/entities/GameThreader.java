@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 public abstract class GameThreader {
 
     // Game Threads, each for a specific task
-    private final ExecutorService gameLogicThread = Executors.newFixedThreadPool(1);
+    private final ExecutorService gameLogicThread = Executors.newSingleThreadExecutor();
     private ExecutorService laserThread;
     private ExecutorService rocketThread;
     private ExecutorService droneThread;

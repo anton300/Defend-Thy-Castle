@@ -1,7 +1,7 @@
 package com.entities;
 
 /**
- * The castle object that contains the castle's health and spaceShip.
+ * The castle object that contains the castle's health and SPACE_SHIP.
  *
  * @author Anton Zenin.
  */

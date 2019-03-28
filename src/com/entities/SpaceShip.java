@@ -3,7 +3,9 @@ package com.entities;
 import com.run.LaunchGame;
 import javafx.animation.PathTransition;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Rotate;
@@ -19,7 +21,7 @@ public class SpaceShip {
     private Missile missile;
     private Scene scene;
 
-    private static final int[] MISSILE_LAUNCH_POINT_COOR = {LaunchGame.SCENE_HEIGHT, LaunchGame.SCENE_WIDTH / 2};
+    private static final int[] MISSILE_LAUNCH_POINT = {LaunchGame.SCENE_HEIGHT, LaunchGame.SCENE_WIDTH / 2};
     private static final int[] FIRING_POINT = {175, LaunchGame.positionOfShipY};
     private int[] target = new int[2];
 
@@ -27,7 +29,7 @@ public class SpaceShip {
         this.scene = scene;
         gun = new Gun(35, 0, FIRING_POINT);
 
-        missile = new Missile(500, MISSILE_LAUNCH_POINT_COOR);
+        missile = new Missile(500, MISSILE_LAUNCH_POINT);
     }
 
     public Gun getGun() {
@@ -36,6 +38,53 @@ public class SpaceShip {
 
     public Missile getMissile() {
         return missile;
+    }
+
+    public void flySpaceship(Button buttonOne) {
+        // The code below moves the ship up and down
+        buttonOne.setOnKeyPressed(event -> {
+            // start movement according to key pressed
+            switch (event.getCode()) {
+
+                // When the player presses the W key, it moves the SPACE_SHIP upwards
+                case W:
+                    // Makes sure the SPACE_SHIP does not move off the screen
+                    if (LaunchGame.positionOfShipY > 0) {
+                        LaunchGame.shipShape.setFill(null);
+
+                        // Moves the SPACE_SHIP up 40 pixels
+                        LaunchGame.positionOfShipY = LaunchGame.positionOfShipY - 40;
+
+                        LaunchGame.shipShape = new Rectangle(0, LaunchGame.positionOfShipY, 191, 300);
+                        System.out.println(LaunchGame.positionOfShipY);
+
+                        // Sets a new image for the SPACE_SHIP
+                        LaunchGame.shipShape.setFill(new ImagePattern(LaunchGame.SPACE_SHIP));
+
+                        LaunchGame.ROOT.getChildren().add(LaunchGame.shipShape);
+                    }
+                    break;
+
+                // When the player presses the S key, it moves the SPACE_SHIP downwards
+                case S:
+                    if (LaunchGame.positionOfShipY < LaunchGame.SCENE_HEIGHT) {
+                        LaunchGame.shipShape.setFill(null);
+
+                        // Moves the SPACE_SHIP by 40 pixels
+                        LaunchGame.positionOfShipY = LaunchGame.positionOfShipY + 40;
+
+                        LaunchGame.shipShape = new Rectangle(0, LaunchGame.positionOfShipY, 191, 300);
+
+                        System.out.println(LaunchGame.positionOfShipY);
+
+                        // Creates a new image for the SPACE_SHIP
+                        LaunchGame.shipShape.setFill(new ImagePattern(LaunchGame.SPACE_SHIP));
+
+                        LaunchGame.ROOT.getChildren().add(LaunchGame.shipShape);
+                    }
+                    break;
+            }
+        });
     }
 
     /**
