@@ -43,9 +43,9 @@ public class GameWorld extends GameThreader {
      */
     public void playGame() {
         // Outer infinite game loop
-        while (true) {
-            doTask();
-        }
+//        while (true) {
+        doTask();
+//        }
     }
 
     /**
