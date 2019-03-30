@@ -1,5 +1,7 @@
 package com.entities;
 
+import javafx.scene.Scene;
+
 /**
  * The castle object that contains the castle's health and SPACE_SHIP.
  *
@@ -9,9 +11,9 @@ public class Base {
     private SpaceShip spaceShip;
     private int health;
 
-    public Base(SpaceShip shooter, int health) {
-        this.spaceShip = shooter;
-        this.health = health;
+    public Base(Scene scene) {
+        this.spaceShip = new SpaceShip(scene);
+        this.health = 100;
     }
 
     public int getHealth() {

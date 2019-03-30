@@ -4,12 +4,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * This class manages multithreading of the game. Uses Java Concurrency Threads and Executors.
+ * This class manages multithreading of the game. Uses Java Concurrency's Threads and Executors.
  */
-public abstract class GameThreader {
+public class GameThreader {
 
     // Game Threads, each for a specific task
-    private final ExecutorService gameLogicThread = Executors.newSingleThreadExecutor();
+    private final ExecutorService flySpaceshipThread = Executors.newSingleThreadExecutor();
     private ExecutorService laserThread;
     private ExecutorService rocketThread;
     private ExecutorService droneThread;
@@ -21,38 +21,33 @@ public abstract class GameThreader {
         this.droneThread = Executors.newSingleThreadExecutor();
     }
 
-    /**
-     * Assigns a task to thread(s). Thread(s) runs the code in this method.
-     */
-    protected abstract void doTask();
-
     // Setters
-    protected void setDroneAmount(int numberOfDrones) {
+    public void setDroneAmount(int numberOfDrones) {
         this.droneThread = Executors.newFixedThreadPool(numberOfDrones);
     }
 
-    protected void setLaserAmount(int numberOfLasers) {
+    public void setLaserAmount(int numberOfLasers) {
         laserThread = Executors.newFixedThreadPool(numberOfLasers);
     }
 
-    protected void setRocketAmount(int numberOfRockets) {
+    public void setRocketAmount(int numberOfRockets) {
         rocketThread = Executors.newFixedThreadPool(numberOfRockets);
     }
 
     // Getters
-    protected ExecutorService getGameLogicThread() {
-        return gameLogicThread;
-    }
-
-    protected ExecutorService getLaserThread() {
+    public ExecutorService getLaserThread() {
         return laserThread;
     }
 
-    protected ExecutorService getRocketThread() {
+    public ExecutorService getRocketThread() {
         return rocketThread;
     }
 
-    protected ExecutorService getDroneThread() {
+    public ExecutorService getDroneThread() {
         return droneThread;
+    }
+
+    public ExecutorService getFlySpaceshipThread() {
+        return flySpaceshipThread;
     }
 }
