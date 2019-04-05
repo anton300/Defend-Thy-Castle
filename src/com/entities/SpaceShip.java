@@ -117,7 +117,6 @@ public class SpaceShip {
      * Fires the gun whenever the mouse is clicked.
      */
     public void fireGun() {
-
         // Whenever the mouse is clicked
         scene.setOnMouseClicked(event -> {
             // It runs the code in here
@@ -137,9 +136,18 @@ public class SpaceShip {
             Circle hitTarget = new Circle(1);
             hitTarget.setVisible(false);
 
+            // Setting the circle 1200 pixels beyond the mouse's X & Y
+            hitTarget.setLayoutX(target[0] + 1200);
+            hitTarget.setLayoutY(target[1] + 1200);
+
             PathTransition moveLaser = new PathTransition();
+
+            // What is moving (the laser)
             moveLaser.setNode(laser);
+
+            // To where the laser will go to
             moveLaser.setPath(hitTarget);
+
             moveLaser.setDuration(Duration.seconds(1));
             moveLaser.play();
 
