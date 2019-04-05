@@ -1,6 +1,6 @@
 package com.entities;
 
-public class Drone extends AIMonster implements Runnable {
+public class Drone extends AIDrone implements Runnable {
     private int health;
     private double speed;
 
@@ -15,8 +15,8 @@ public class Drone extends AIMonster implements Runnable {
         return health;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void damageBy(int dmgAmount) {
+        this.health -= dmgAmount;
     }
 
     @Override
