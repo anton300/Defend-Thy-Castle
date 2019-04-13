@@ -18,7 +18,7 @@ public class Gun {
     public static final int MIN_GUN_ELEVATION = 180;
 
     // Constructor
-    public Gun(int damage, int damageBoost, int[] firingPoint) {
+    public Gun(int damage, int damageBoost, double[] firingPoint) {
         this.gunElevation = 90;
 
         // Creates the point from which the code knows where

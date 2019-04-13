@@ -12,11 +12,11 @@ public class Laser {
     private int damageBoost;
 
     // The point that the bullet has to go to
-    private int[] travelToPoint = new int[2];
+    private double[] travelToPoint = new double[2];
     // The point from the where the bullet has been fired
-    private int[] firingPoint = new int[2];
+    private double[] firingPoint = new double[2];
 
-    public Laser(int damage, int damageBoost, int[] startPoint) {
+    public Laser(int damage, int damageBoost, double[] startPoint) {
         this.damage = damage;
         this.damageBoost = damageBoost;
 
@@ -46,7 +46,7 @@ public class Laser {
         this.damage -= damageBoost;
     }
 
-    public int[] getTravelToPoint() {
+    public double[] getTravelToPoint() {
         return travelToPoint;
     }
 
@@ -58,7 +58,7 @@ public class Laser {
         this.travelToPoint[1] = mouseXY[1];
     }
 
-    public int[] getFiringPoint() {
+    public double[] getFiringPoint() {
         return firingPoint;
     }
 

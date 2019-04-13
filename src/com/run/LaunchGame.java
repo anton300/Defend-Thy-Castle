@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
@@ -34,6 +35,9 @@ public class LaunchGame extends Application {
 
     // We will be using a CSS file that will connect to our JavaFX application
     // this will be used for setting a global text font, text color, etc.
+
+    public static final Pane ROOT = new Pane();
+
     private static final double WIDTH = 1250, HEIGHT = 600;
     private static final String SHIP_IMAGE = "images/spaceship.png";
     private static final String DRONE_IMAGE = "images/drone.png";
@@ -41,7 +45,7 @@ public class LaunchGame extends Application {
     private static final String CITY_IMAGE = "images/spaceCity.jpg";
 
     private Image shipImage, droneImage, laserImage, cityImage;
-    private Node shipNode;
+    public static Node shipNode;
     private ArrayList<Node> lasers = new ArrayList<>();
     private ArrayList<Node> drones = new ArrayList<>();
     private Group board;
